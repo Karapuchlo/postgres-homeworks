@@ -15,9 +15,9 @@ SELECT ship_country, SUM(freight) as total_weight FROM orders WHERE ship_region 
 
 -- 6. страны, в которых зарегистрированы и заказчики (customers) и поставщики (suppliers) и работники (employees).
 SELECT country FROM customers
-UNION
+INTERSECT
 SELECT country FROM suppliers
-UNION
+INTERSECT
 SELECT country FROM employees;
 
 -- 7. страны, в которых зарегистрированы и заказчики (customers) и поставщики (suppliers), но не зарегистрированы работники (employees).
